@@ -1,0 +1,32 @@
+.add-location {
+  margin-top: 50px;
+  height: 15vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+  align-items: center;
+
+  text-shadow: 2px 2px rgba(50, 50, 70, 0.5);
+}
+
+.location-footer {
+  align-items: center;
+  justify-content: space-between;
+}
+
+.new-location-input {
+  position: relative;
+  margin: 10px auto;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+
+  padding: 2px;
+
+  color: rgba(50, 50, 70, 0.5);
+  font-size: 20px;
+  font-weight: 900;
+
+  text-align: center;
+  box-shadow: 2px 4px rgba(0, 0, 0, 0.2);
+}
