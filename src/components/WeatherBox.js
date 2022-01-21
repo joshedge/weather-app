@@ -6,22 +6,28 @@ import { MdOutlineDeleteForever } from "react-icons/md";
 import "../styles/WeatherBox.css";
 import "../styles/icons.css";
 
-const api = {
-  key: "165edf014cf0d3b498e21539e1b03eca",
-  base: "https://api.openweathermap.org/data/2.5/",
-};
+const WeatherBox = ({ key, city, country, handleDeleteLocation }) => {
+  const api = {
+    key: "165edf014cf0d3b498e21539e1b03eca",
+    base: "https://api.openweathermap.org/data/2.5/",
+  };
 
-const WeatherBox = ({ id, text, handleDeleteLocation }) => {
   const [weather, setWeather] = useState({});
 
   useEffect(() => {
-    fetch(`${api.base}weather?q=${text}&units=metric&APPID=${api.key}`)
-      .then((res) => res.json())
-      .then((result) => {
-        setWeather(result);
-        console.log(result);
-      });
-  }, [text]);
+    loadWeather(`${city}, ${country}`);
+  }, [key]);
+
+  async function loadWeather(query) {
+    console.log(query);
+    const res = await fetch(
+      `${api.base}weather?q=${query}&units=metric&APPID=${api.key}`
+    );
+    res.json().then((data) => {
+      console.log(data);
+      setWeather(data);
+    });
+  }
 
   return (
     <div className="weather-box">
@@ -34,7 +40,7 @@ const WeatherBox = ({ id, text, handleDeleteLocation }) => {
       </div>
       <div className="weather-box-footer">
         <MdOutlineDeleteForever
-          onClick={() => handleDeleteLocation(id)}
+          onClick={() => handleDeleteLocation(key)}
           className="delete-icon"
           size="3em"
         />
