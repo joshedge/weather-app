@@ -1,5 +1,3 @@
-import "../styles/CurrentLocation.css";
-
 const CurrentLocation = ({ weather }) => {
   let loc = "";
 
@@ -11,7 +9,9 @@ const CurrentLocation = ({ weather }) => {
 
   return (
     <div>
-      <div className="location">{loc}</div>
+      <div className="text-white text-4xl font-bold text-center text-shadow-sm">
+        {loc}
+      </div>
     </div>
   );
 };

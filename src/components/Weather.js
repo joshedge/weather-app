@@ -1,5 +1,3 @@
-import "../styles/Weather.css";
-
 const Weather = ({ weather }) => {
   let temperature = "";
   let weatherType = "";
@@ -11,8 +9,17 @@ const Weather = ({ weather }) => {
 
   return (
     <div>
-      <div className="temperature">{temperature}°C</div>
-      <div className="weather-type">{weatherType}</div>
+      <div
+        className="relative inline-block my-7 mx-auto 
+                    bg-gray-400 rounded-2xl py-4 px-6 
+                    text-white text-8xl font-black text-center 
+                    shadow-lg shadow-gray-500 text-shadow-med"
+      >
+        {temperature}°C
+      </div>
+      <div className="text-white text-5xl font-bold text-shadow-sm">
+        {weatherType}
+      </div>
     </div>
   );
 };

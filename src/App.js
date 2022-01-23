@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "./styles/App.css";
 import WeatherBoxList from "./components/WeatherBoxList";
 
 const App = () => {
@@ -25,7 +24,7 @@ const App = () => {
   };
 
   return (
-    <div className="container">
+    <div className="min-h-screen max-w-[75%] mt-10 mx-auto px-4">
       <main>
         <WeatherBoxList
           locations={locations}

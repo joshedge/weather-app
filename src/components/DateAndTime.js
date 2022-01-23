@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "../styles/DateAndTime.css";
 
 class DateAndTime extends Component {
   constructor(props) {
@@ -58,8 +57,12 @@ class DateAndTime extends Component {
   render() {
     return (
       <div>
-        <div className="date">{this.dateBuilder(new Date())}</div>
-        <div className="time">{this.timeBuilder(new Date())}</div>;
+        <div className="text-white text-xl font-light italic text-center text-shadow-sm">
+          {this.dateBuilder(new Date())}
+        </div>
+        <div className="text-white text-xl font-light italic text-center text-shadow-sm">
+          {this.timeBuilder(new Date())}
+        </div>
       </div>
     );
   }

@@ -1,7 +1,6 @@
 import WeatherBox from "./WeatherBox";
 import AddLocation from "./AddLocation";
 import React, { useState } from "react";
-import "../styles/WeatherBoxList.css";
 import { nanoid } from "nanoid";
 
 const WeatherBoxList = ({
@@ -38,30 +37,15 @@ const WeatherBoxList = ({
         } else {
           console.log("location panel already exists!");
         }
-
-        //console.log(result);
-        // weather = result;
-        // console.log(weather);
       });
-    // .catch((err) => {
-    //   console.log(err);
-    // });
   }
 
   const addLocation = (text) => {
-    //console.log(text);
     addQueryLocation(text);
-    //console.log(weath);
-    // const newLocation = {
-    //   key: nanoid(),
-    //   text: text,
-    // };
-    // const newLocations = [...locations, newLocation];
-    // handleSetLocations(newLocations);
   };
 
   return (
-    <div className="weather-list">
+    <div className="grid grid-cols-3 p-6 border-solid border-4 rounded-2xl border-gray-400">
       {locations.length > 0 && (
         <div>
           {locations.map((location) => (
